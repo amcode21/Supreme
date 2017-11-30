@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Captcha Harvester</title>
+  </head>
+  <body>
+  <center>
+  <form action="/submit" method="post">
+      <div class="g-recaptcha" data-sitekey="<%= sitekey %>" data-callback="sub"></div>
+      <script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script>
+      <p>
+        <input type="submit" value="Submit" id="submit" style="">
+  </form>
+</center>
+<script>
+  function sub(){
+    document.getElementById("submit").click();
+  }
+</script>
+  </body>
+</html>

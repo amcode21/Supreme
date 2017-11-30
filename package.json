@@ -1,0 +1,24 @@
+{
+  "name": "supreme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nick Mattiacci",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "chalk": "^2.3.0",
+    "cheerio": "^1.0.0-rc.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "moment": "^2.19.3",
+    "nightmare": "^2.10.0",
+    "querystring": "^0.2.0",
+    "request": "^2.83.0",
+    "set-cookie-parser": "^2.0.0",
+    "util": "^0.10.3"
+  }
+}
