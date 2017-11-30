@@ -1,13 +1,90 @@
 {
-	"Home Address": {
-			"name": "Nick Mattiacci",
-			"email": "nickm14@gmail.com",
-			"telephone": "952-220-0075",
-			"address": "18904 Hanus Road",
-			"addresstwo": "",
-			"zip": "55345",
-			"city": "Minneotnka",
-			"state": "MN",
-			"country": "USA"
-		}
+    "1": {
+        "name": "Nick Mattiacci",
+        "email": "nickm14@gmail.com",
+        "telephone": "952-220-0075",
+        "address": "18904 Hanus Road",
+        "addresstwo": "",
+        "zip": "55345",
+        "city": "Minneotnka",
+        "state": "MN",
+        "country": "USA"
+    },
+    "2": {
+        "name": "Nicholas Mattiacci",
+        "email": "nickmattiacci@me.com",
+        "telephone": "952-220-0075",
+        "address": "18904 Hanus Rd",
+        "addresstwo": "",
+        "zip": "55345",
+        "city": "Minneotnka",
+        "state": "MN",
+        "country": "USA"
+    },
+    "3": {
+        "name": "Nick Mattiacci",
+        "email": "nickm14@gmail.com",
+        "telephone": "952-220-0075",
+        "address": "18904 Hanus Road",
+        "addresstwo": "Apt 101",
+        "zip": "55345",
+        "city": "Minneotnka",
+        "state": "MN",
+        "country": "USA"
+    },
+    "4": {
+        "name": "Nicholas Mattiacci",
+        "email": "matti269@umn.edu",
+        "telephone": "952-220-0075",
+        "address": "18904 Hanus Rd",
+        "addresstwo": "Apt 203",
+        "zip": "55345",
+        "city": "Minneotnka",
+        "state": "MN",
+        "country": "USA"
+    },
+	"5": {
+        "name": "Matt Mattiacci",
+        "email": "matti269@umn.edu",
+        "telephone": "952-220-0036",
+        "address": "18904 Hanus Road",
+        "addresstwo": "",
+        "zip": "55345",
+        "city": "Minneotnka",
+        "state": "MN",
+        "country": "USA"
+    },
+    "6": {
+        "name": "Matthew Mattiacci",
+        "email": "nickmattiacci@me.com",
+        "telephone": "952-220-0036",
+        "address": "18904 Hanus Rd",
+        "addresstwo": "",
+        "zip": "55345",
+        "city": "Minneotnka",
+        "state": "MN",
+        "country": "USA"
+    },
+    "7": {
+        "name": "Matt Mattiacci",
+        "email": "nickm14@gmail.com",
+        "telephone": "952-220-0036",
+        "address": "18904 Hanus Road",
+        "addresstwo": "Apt 101",
+        "zip": "55345",
+        "city": "Minneotnka",
+        "state": "MN",
+        "country": "USA"
+    },
+    "8": {
+        "name": "Matthew Mattiacci",
+        "email": "nickmattiacci@me.com",
+        "telephone": "952-220-0036",
+        "address": "18904 Hanus Rd",
+        "addresstwo": "Apt 203",
+        "zip": "55345",
+        "city": "Minneotnka",
+        "state": "MN",
+        "country": "USA"
+    }
 }

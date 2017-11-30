@@ -1,5 +1,5 @@
 {
-    "refreshRate": 10000,
+    "refreshRate": 500,
     "checkoutDelay": 3000,
     "captcha": "server",
     "checkoutMethod": "request"
