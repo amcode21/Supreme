@@ -77,6 +77,8 @@ $ cd supreme
 $ npm install
 ```
 
+![gif](gif.gif)
+
 If no errors occur, browser will open and autofill information and click the checkout button, captcha will pop up, solve and hit verify
 
 Have your information ready in case the autofill fails an input (likely CVV)
