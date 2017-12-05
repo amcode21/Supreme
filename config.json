@@ -1,6 +1,6 @@
 {
     "refreshRate": 500,
-    "checkoutDelay": 3000,
-    "captcha": "server",
-    "checkoutMethod": "request"
+    "checkoutDelay": 0,
+    "captcha": "open",
+    "checkoutMethod": "nightmare"
 }

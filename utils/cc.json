@@ -1,93 +1,9 @@
 {
     "Debit": {
-        "name": "Nicholas P Mattiacci",
-        "ccnumber": "4342 5700 3007 9256",
+        "name": "John Doe",
+        "ccnumber": "4342 5700 9999 9999",
         "expmonth": "07",
         "expyear": "2021",
-        "cvv": "511"
-    },
-    "Credit1": {
-        "name": "Nicholas P Mattiacci",
-        "ccnumber": "4147 0990 3172 1028",
-        "expmonth": "04",
-        "expyear": "2022",
-        "cvv": "324"
-    },
-	"Credit2": {
-        "name": "Nicholas P Mattiacci",
-        "ccnumber": "4465 4000 7521 8596",
-        "expmonth": "10",
-        "expyear": "2021",
-        "cvv": "540"
-    },
-	"Privacy1": {
-        "name": "Nicholas P Mattiacci",
-        "ccnumber": "4859 1014 8456 7458",
-        "expmonth": "11",
-        "expyear": "2021",
-        "cvv": "097"
-    },
-	"Privacy2": {
-        "name": "Nicholas P Mattiacci",
-        "ccnumber": "4859 1081 3468 6414",
-        "expmonth": "11",
-        "expyear": "2021",
-        "cvv": "163"
-    },
-	"Privacy3": {
-        "name": "Nicholas P Mattiacci",
-        "ccnumber": "4859 1021 0709 6396",
-        "expmonth": "11",
-        "expyear": "2021",
-        "cvv": "153"
-    },
-	"Privacy4": {
-        "name": "Nicholas P Mattiacci",
-        "ccnumber": "4859 1000 1962 2788",
-        "expmonth": "11",
-        "expyear": "2021",
-        "cvv": "114"
-    },
-	"Privacy5": {
-        "name": "Nicholas P Mattiacci",
-        "ccnumber": "4859 1045 7222 7787",
-        "expmonth": "11",
-        "expyear": "2021",
-        "cvv": "097"
-    },
-	"Privacy6": {
-        "name": "Nicholas P Mattiacci",
-        "ccnumber": "4859 1033 5518 3514",
-        "expmonth": "11",
-        "expyear": "2021",
-        "cvv": "664"
-    },
-	"Privacy7": {
-        "name": "Nicholas P Mattiacci",
-        "ccnumber": "4859 1024 2253 8841",
-        "expmonth": "11",
-        "expyear": "2021",
-        "cvv": "998"
-    },
-	"Privacy8": {
-        "name": "Nicholas P Mattiacci",
-        "ccnumber": "4859 1078 2058 8926",
-        "expmonth": "11",
-        "expyear": "2021",
-        "cvv": "354"
-    },
-	"Privacy9": {
-        "name": "Nicholas P Mattiacci",
-        "ccnumber": "4859 1094 4874 0657",
-        "expmonth": "11",
-        "expyear": "2021",
-        "cvv": "051"
-    },
-	"Privacy10": {
-        "name": "Nicholas P Mattiacci",
-        "ccnumber": "4859 1032 9736 2325",
-        "expmonth": "11",
-        "expyear": "2021",
-        "cvv": "435"
+        "cvv": "999"
     }
 }

@@ -1,111 +1,11 @@
 {
     "tasks": [{
-            "nickname": "Black Small",
-            "category": "t-shirts",
-            "keyword": "Mountain",
-            "style": "Black",
-            "size": "Small",
-            "identity": "1",
-            "cc": "Debit"
-        },
-        {
-            "nickname": "Black Medium",
-            "category": "t-shirts",
-            "keyword": "Mountain",
-            "style": "Black",
-            "size": "Medium",
-            "identity": "2",
-            "cc": "Credit1"
-        },
-        {
-            "nickname": "Black Large",
-            "category": "t-shirts",
-            "keyword": "Mountain",
-            "style": "Black",
-            "size": "Large",
-            "identity": "3",
-            "cc": "Credit2"
-        },
-        {
-            "nickname": "Black XLarge",
-            "category": "t-shirts",
-            "keyword": "Mountain",
-            "style": "Black",
-            "size": "XLarge",
-            "identity": "4",
-            "cc": "Privacy1"
-        },
-        {
-            "nickname": "Blue Small",
-            "category": "t-shirts",
-            "keyword": "Mountain",
-            "style": "Blue",
-            "size": "Small",
-            "identity": "5",
-            "cc": "Privacy2"
-        },
-        {
-            "nickname": "Blue Medium",
-            "category": "t-shirts",
-            "keyword": "Mountain",
-            "style": "Blue",
-            "size": "Medium",
-            "identity": "6",
-            "cc": "Privacy3"
-        },
-        {
-            "nickname": "Blue Large",
-            "category": "t-shirts",
-            "keyword": "Mountain",
-            "style": "Blue",
-            "size": "Large",
-            "identity": "7",
-            "cc": "Privacy4"
-        },
-        {
-            "nickname": "Blue XLarge",
-            "category": "t-shirts",
-            "keyword": "Mountain",
-            "style": "Blue",
-            "size": "XLarge",
-            "identity": "8",
-            "cc": "Privacy5"
-        },
-        {
-            "nickname": "White Small",
-            "category": "t-shirts",
-            "keyword": "Mountain",
-            "style": "White",
-            "size": "Small",
-            "identity": "1",
-            "cc": "Privacy6"
-        },
-        {
-            "nickname": "White Medium",
-            "category": "t-shirts",
-            "keyword": "Mountain",
-            "style": "White",
-            "size": "Medium",
-            "identity": "2",
-            "cc": "Privacy7"
-        },
-        {
-            "nickname": "White Large",
-            "category": "t-shirts",
-            "keyword": "Mountain",
-            "style": "White",
-            "size": "Large",
-            "identity": "3",
-            "cc": "Privacy8"
-        },
-        {
-            "nickname": "White XLarge",
-            "category": "t-shirts",
-            "keyword": "Mountain",
-            "style": "White",
-            "size": "XLarge",
-            "identity": "4",
-            "cc": "Privacy9"
-        }
-    ]
+        "nickname": "Shirt",
+        "category": "accessories",
+        "keyword": "Tagless",
+        "style": "White",
+        "size": "Large",
+        "identity": "Home",
+        "cc": "Debit"
+    }]
 }

@@ -6,12 +6,21 @@ const captcha = require('./utils/captcha');
 const request = require('request').defaults({
     followAllRedirects: true,
     jar: true,
-    proxy: 'http://Dille308:242DILLE@us43.coppedproxies.com:33128'
+    //proxy: 'http://Dille308:242DILLE@us43.coppedproxies.com:33128',
+    headers: {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+        'Connection': 'keep-alive',
+        'Upgrade-Insecure-Requests': '1',
+        'Accept-Language': 'en-US,en;q=0.8'
+    }
 });
 const cheerio = require('cheerio');
 const util = require('util');
 const moment = require('moment');
 const querystring = require('querystring');
+const webdriver = require('selenium-webdriver');
+const _ = require('lodash');
+const nightmare = require('./nightmare');
 
 let findLink = (task, callback) => {
 
@@ -74,8 +83,8 @@ let getCodes = (task, callback) => {
             } else {
                 $('option').each(function(i, elem) {
                     if ($(this).text() == task.size) {
-                        log.success(`Found size code: ${task.sizeCode} and style code: ${task.styleCode} for ${task.size} ${task.style} ${task.title}!`, task.nickname)
                         task.sizeCode = $(this).attr('value');
+                        log.success(`Found size code: ${task.sizeCode} and style code: ${task.styleCode} for ${task.size} ${task.style} ${task.title}!`, task.nickname)
                         return callback(task);
                     }
                 });
@@ -89,6 +98,10 @@ let addToCart = (task, callback) => {
     request({
         url: `http://www.supremenewyork.com${task.atcLink}`,
         method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+            'Accept': '*/*;q=0.5, text/javascript, application/javascript, application/ecmascript, application/x-ecmascript',
+        },
         body: querystring.stringify({
             'utf8': '✓',
             'st': task.styleCode,
@@ -99,7 +112,20 @@ let addToCart = (task, callback) => {
         if (err) {
             log.error(util.inspect(err));
         } else {
-            task.cookies = resp.request.headers.cookie
+            task.cookies = _.map(resp.headers['set-cookie'], i => {
+                let name = i.split(';')[0].split('=')[0];
+                let value = i.split(';')[0].split('=')[1];
+                let domain = i.indexOf('Domain') > -1 ?
+                    '.supremenewyork.com' :
+                    'www.supremenewyork.com';
+                let path = '/';
+                return {
+                    name: name,
+                    value: value,
+                    domain: domain,
+                    path: path
+                }
+            });
             log.success(`Added ${task.size} ${task.style} ${task.title} to cart!`, task.nickname);
             return callback(task);
         }
@@ -136,6 +162,10 @@ let checkout = (task) => {
                 request({
                     url: 'https://www.supremenewyork.com/checkout.json',
                     method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                        'Accept': '*/*',
+                    },
                     body: querystring.stringify({
                         'utf8': '✓',
                         'authenticity_token': csrf,
@@ -161,9 +191,11 @@ let checkout = (task) => {
                         [$('input#numbc').attr('name')]: ''
                     }).replace(/%20/, '+')
                 }, (err, resp, body) => {
+                    console.log(resp.request.body)
                     var response = JSON.parse(body);
                     if (response.status == 'failed') {
-                        log.error(`Card decline error`, task.nickname);
+                        log.error(`Error checking out...`, task.nickname);
+                        nightmare.checkout(task);
                     } else {
                         console.log(body);
                     }
