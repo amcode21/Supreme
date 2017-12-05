@@ -74,7 +74,7 @@ CC:
 ```sh
 $ cd Desktop
 $ cd supreme
-$ npm install
+$ npm start
 ```
 
 ![gif](gif.gif)
