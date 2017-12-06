@@ -6,7 +6,6 @@ const captcha = require('./utils/captcha');
 const request = require('request').defaults({
     followAllRedirects: true,
     jar: true,
-    //proxy: 'http://Dille308:242DILLE@us43.coppedproxies.com:33128',
     headers: {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
         'Connection': 'keep-alive',
