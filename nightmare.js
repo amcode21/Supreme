@@ -4,6 +4,7 @@ const _ = require('lodash');
 const cc = require('./utils/cc');
 const identities = require('./utils/identities');
 const log = require('./utils/log');
+const config = require('./config');
 
 Nightmare.action('preloadCookies',
     function(name, options, parent, win, renderer, done) {
@@ -44,6 +45,7 @@ let checkout = (task) => {
             waitTimeout: 120000
         }).useragent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36')
         .preloadCookies(task.cookies, 'https://www.supremenewyork.com')
+        .preloadCookies(config.gcookies, 'https://www.google.com')
         .goto('https://www.supremenewyork.com/checkout')
         .type('#order_billing_name', identities[task.identity].name)
         .type('#order_email', identities[task.identity].email)
