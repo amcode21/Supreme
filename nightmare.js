@@ -39,7 +39,7 @@ let checkout = (task) => {
     Nightmare({
             show: true,
             alwaysOnTop: false,
-            typeInterval: 15,
+            typeInterval: 20,
             height: 1000,
             width: 1666,
             waitTimeout: 120000
