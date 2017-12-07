@@ -39,7 +39,7 @@ let checkout = (task) => {
     Nightmare({
             show: true,
             alwaysOnTop: false,
-            typeInterval: 20,
+            typeInterval: 15,
             height: 1000,
             width: 1666,
             waitTimeout: 120000
@@ -47,18 +47,38 @@ let checkout = (task) => {
         .preloadCookies(task.cookies, 'https://www.supremenewyork.com')
         .preloadCookies(config.gcookies, 'https://www.google.com')
         .goto('https://www.supremenewyork.com/checkout')
-        .type('#order_billing_name', identities[task.identity].name)
-        .type('#order_email', identities[task.identity].email)
-        .type('#order_tel', identities[task.identity].telephone)
-        .type('#bo', identities[task.identity].address)
-        .type('#oba3', identities[task.identity].addresstwo)
-        .type('#order_billing_zip', identities[task.identity].zip)
-        .type('#nnaerb', cc[task.cc].ccnumber)
-        .select('#credit_card_month', cc[task.cc].expmonth)
-        .select('#credit_card_year', cc[task.cc].expyear)
-        .type('#orcer', cc[task.cc].cvv)
+        .mousedown('#cart-address > fieldset > div:nth-child(2) > input')
+        .mouseup('#cart-address > fieldset > div:nth-child(2) > input')
+        .type('#cart-address > fieldset > div:nth-child(2) > input', identities[task.identity].name)
+        .mousedown('#cart-address > fieldset > div:nth-child(3) > input')
+        .mouseup('#cart-address > fieldset > div:nth-child(3) > input')
+        .type('#cart-address > fieldset > div:nth-child(3) > input', identities[task.identity].email)
+        .mousedown('#cart-address > fieldset > div:nth-child(4) > input')
+        .mouseup('#cart-address > fieldset > div:nth-child(4) > input')
+        .type('#cart-address > fieldset > div:nth-child(4) > input', identities[task.identity].telephone)
+        .mousedown('#cart-address > fieldset > div:nth-child(5) > div:nth-child(1) > input')
+        .mouseup('#cart-address > fieldset > div:nth-child(5) > div:nth-child(1) > input')
+        .type('#cart-address > fieldset > div:nth-child(5) > div:nth-child(1) > input', identities[task.identity].address)
+        .mousedown('#cart-address > fieldset > div:nth-child(5) > div:nth-child(2) > input')
+        .mouseup('#cart-address > fieldset > div:nth-child(5) > div:nth-child(2) > input')
+        .type('#cart-address > fieldset > div:nth-child(5) > div:nth-child(2) > input', identities[task.identity].addresstwo)
+        .mousedown('#cart-address > fieldset > div:nth-child(6) > div:nth-child(1) > input')
+        .mouseup('#cart-address > fieldset > div:nth-child(6) > div:nth-child(1) > input')
+        .type('#cart-address > fieldset > div:nth-child(6) > div:nth-child(1) > input', identities[task.identity].zip)
+        .mousedown('#card_details > div:nth-child(1) > input')
+        .mouseup('#card_details > div:nth-child(1) > input')
+        .type('#card_details > div:nth-child(1) > input', cc[task.cc].ccnumber)
+        .mousedown('#cvv_row > div:nth-child(1) > select:nth-child(2)')
+        .mouseup('#cvv_row > div:nth-child(1) > select:nth-child(2)')
+        .select('#cvv_row > div:nth-child(1) > select:nth-child(2)', cc[task.cc].expmonth)
+        .mousedown('#cvv_row > div:nth-child(1) > select:nth-child(3)')
+        .mouseup('#cvv_row > div:nth-child(1) > select:nth-child(3)')
+        .select('#cvv_row > div:nth-child(1) > select:nth-child(3)', cc[task.cc].expyear)
+        .mousedown('#cvv_row > div:nth-child(2) > input')
+        .mouseup('#cvv_row > div:nth-child(2) > input')
+        .type('#cvv_row > div:nth-child(2) > input', cc[task.cc].cvv)
         .click('#cart-cc > fieldset > p:nth-child(4) > label > div > ins')
-        .click('input.button')
+        .click('#cart-footer > div > input')
         .then()
         .catch(function(error) {
             console.error('Error:', error);
