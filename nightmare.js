@@ -35,6 +35,7 @@ Nightmare.action('preloadCookies',
 
 
 let checkout = (task) => {
+    console.log(task.cookies)
     log.info(`Opening browser at checkout with ${task.size} ${task.style} ${task.title} in cart...`, task.nickname)
     Nightmare({
             show: true,
@@ -44,6 +45,7 @@ let checkout = (task) => {
             width: 1666,
             waitTimeout: 120000
         }).useragent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36')
+        .cookies.clear()
         .preloadCookies(task.cookies, 'https://www.supremenewyork.com')
         .preloadCookies(config.gcookies, 'https://www.google.com')
         .goto('https://www.supremenewyork.com/checkout')
