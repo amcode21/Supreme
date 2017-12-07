@@ -1,6 +1,6 @@
 # Set Up
 
-Install [Node.js](http://nodejs.org/) and a text editor like [Sublime Text](https://www.sublimetext.com/3)
+Install [Node.js](http://nodejs.org/), [Git](https://git-scm.com/downloads), and a text editor like [Sublime Text](https://www.sublimetext.com/3)
 
 ### Installation
 
