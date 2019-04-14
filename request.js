@@ -28,7 +28,7 @@ let findLink = (task, callback) => {
     let itemFound = false;
 
     request({
-        url: `https://supremenewyork.com/shop/all/${task.category}`
+        url: `https://www.supremenewyork.com/shop/all/${task.category}`
     }, (err, resp, body) => {
         if (err) {
             log.error(util.inspect(err));
@@ -61,7 +61,7 @@ let findLink = (task, callback) => {
 let getCodes = (task, callback) => {
     log.info(`Getting size and style codes for ${task.color} ${task.title}...`, task.nickname);
     request({
-        url: `http://www.supremenewyork.com${task.link}`
+        url: `https://www.supremenewyork.com${task.link}`
     }, (err, resp, body) => {
         if (err) {
             log.error(util.inspect(err));
@@ -69,14 +69,14 @@ let getCodes = (task, callback) => {
             let $ = cheerio.load(body);
             let title = $('h1[itemprop="name"]').text();
             let style = $('p.style').text();
-            task.atcLink = $('form[method=post]').attr('action');
             task.styleCode = $('#st').attr('value');
+            task.atcLink = `shop/${task.styleCode}/add.json`;
             if ($('b.sold-out').text() == 'sold out') {
                 log.warning(`${style} ${title} is sold out. Waiting for restock...`, task.nickname);
                 return setTimeout(getCodes, config.refreshRate, task, callback);
             }
-            if (task.size == '') {
-                item.sizeCode = $('#s').attr('value');
+            if (task.size === '') {
+                task.sizeCode = $('#s').attr('value');
                 log.success(`Found size code: ${task.sizeCode} and style code: ${task.styleCode} for ${task.size} ${task.style} ${task.title}!`, task.nickname)
                 return callback(task);
             } else {
@@ -95,18 +95,17 @@ let getCodes = (task, callback) => {
 let addToCart = (task, callback) => {
     log.info(`Adding ${task.size} ${task.style} ${task.title} to cart...`, task.nickname);
     request({
-        url: `http://www.supremenewyork.com${task.atcLink}`,
+        url: `https://www.supremenewyork.com/${task.atcLink}`,
         method: 'POST',
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
             'Accept': '*/*;q=0.5, text/javascript, application/javascript, application/ecmascript, application/x-ecmascript',
         },
-        body: querystring.stringify({
-            'utf8': '✓',
+        json: true,
+        body: {
             'st': task.styleCode,
             's': task.sizeCode,
-            'commit': 'add to cart'
-        }).replace(/%20/, '+')
+            'qty': 1
+        }
     }, (err, resp, body) => {
         if (err) {
             log.error(util.inspect(err));

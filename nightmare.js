@@ -43,7 +43,10 @@ let checkout = (task) => {
             typeInterval: 20,
             height: 1000,
             width: 1666,
-            waitTimeout: 120000
+            waitTimeout: 120000,
+            openDevtools: {
+                detatch: true
+            }
         }).useragent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36')
         .cookies.clear()
         .preloadCookies(task.cookies, 'https://www.supremenewyork.com')
